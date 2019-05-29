@@ -30,7 +30,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
-> A Colors Company precisa inicialmente dos seguintes relatórios:
+> A Colors Company precisa inicialmente dos seguintes relatórios:<br>
     • Relatório que informe quais são os usuários de cada campus incluindo as seguintes informações: nome do usuário, matrícula, período/série e curso;<br>
     • Relatório de materiais para descarte incluindo as seguintes informações: Nome do material, Tipo do material, Peso do produto;<br>
     • Relatório de lixeiras, incluindo as seguintes informações: Cor, Número, Material, Capacidade(em Litros), localização e a porcentagem de espaço livre;<br>
