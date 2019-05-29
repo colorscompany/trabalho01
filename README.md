@@ -31,10 +31,10 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
 > A Colors Company precisa inicialmente dos seguintes relatórios:
-    • Relatório que informe quais são os usuários de cada campus incluindo as seguintes informações: nome do usuário, matrícula, período/série e curso.
-    • Relatório de materiais para descarte incluindo as seguintes informações: Nome do material, Tipo do material, Peso do produto;
-    • Relatório de lixeiras, incluindo as seguintes informações: Cor, Número, Material, Capacidade(em Litros), localização e a porcentagem de espaço livre.
-    • Relatório com a quantidade de lixo descartado em um dia em cada campus, incluindo as seguintes informações: número da lixeira, tipo de materiais descartados, espaço ocupado (em Litros) e espaço livre.
+    • Relatório que informe quais são os usuários de cada campus incluindo as seguintes informações: nome do usuário, matrícula, período/série e curso;<br>
+    • Relatório de materiais para descarte incluindo as seguintes informações: Nome do material, Tipo do material, Peso do produto;<br>
+    • Relatório de lixeiras, incluindo as seguintes informações: Cor, Número, Material, Capacidade(em Litros), localização e a porcentagem de espaço livre;<br>
+    • Relatório com a quantidade de lixo descartado em um dia em cada campus, incluindo as seguintes informações: número da lixeira, tipo de materiais descartados, espaço ocupado (em Litros) e espaço livre;<br>
     • Relatório que informe o histórico de materiais descartados por cada usuário incluindo as seguintes informações: Nome do usuário e o nome do material.
  
 ## Marco de Entrega 03 em: (13/05/2019)<br>
