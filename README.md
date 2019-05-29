@@ -1,5 +1,4 @@
 # TRABALHO 01:  Título do Trabalho
-CECILIAAAA
 
 # Sumário
 
