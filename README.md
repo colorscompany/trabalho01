@@ -42,7 +42,8 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
     e deve ser criada antes do modelo conceitual
     c) Após criada esta tabela não deve ser modificada, pois será comparada com os resultados finais na conclusão do trabalho
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipint/trabalho01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+![Tabela de dados da Colors Company]
+(https://github.com/colorscompany/trabalho01/blob/master/Tabela_ColorsCompany.ods?raw=true "Tabela - Colors Company")
 
     
 ## Marco de Entrega 04 em: (15/05/2019)<br>
