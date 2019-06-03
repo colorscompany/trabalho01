@@ -34,7 +34,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
     • Relatório que informe quais são os usuários de cada campus incluindo as seguintes informações: nome do usuário, matrícula, período/série e curso;<br>
     • Relatório de materiais para descarte incluindo as seguintes informações: Nome do material, Tipo do material, Peso do produto;<br>
     • Relatório de lixeiras, incluindo as seguintes informações: Cor, Número, Material, Capacidade(em Litros), localização e a porcentagem de espaço livre;<br>
-    • Relatório com a quantidade de lixo descartado em um dia em cada campus, incluindo as seguintes informações: número da lixeira, tipo de materiais descartados, espaço ocupado (em Litros) e espaço livre;<br>
+    • Relatório com a quantidade de lixo descartado em um dia em cada campus, incluindo as seguintes informações: número da lixeira, nome de campus e quantidade de lixo gerado em quilos;<br>
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
     a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
