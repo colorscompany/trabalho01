@@ -18,13 +18,11 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 ### 3.MINI-MUNDO Novo<br>
 
 > O sistema proposto para “Colors Company” conterá as informações acerca dos materiais descartados, lixeiras e usuários cadastrados.Dos Materiais Descartados serão armazenados o nome, foto, material, peso(em Kg). Das Lixeiras serão armazenados o número, cor, material, capacidade(em Kg), localização e espaço livre. Dos usuários, serão armazenados o nome, foto, matrícula, campus, curso e série. O sistema irá gerar um histórico contendo todas as informações dos produtos cadastrados pelos usuários, um histórico com as informações dos usuários e outro com as informações das lixeiras.
-## Marco de Entrega 01 em: (06/05/2019)<br>
+
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
 ![Arquivo PDF do Protótipo Balsamiq feito para Colors Company](https://github.com/euceciliabk/trabalho01/blob/master/Colors%20Company%202%20-%20PDF.pdf?raw=true "Colors Company")
-
-## Marco de Entrega 02 em: (08/05/2019)<br>
 
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
@@ -37,16 +35,9 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
     • Relatório com a quantidade de lixo descartado em um dia em cada campus, incluindo as seguintes informações: número da lixeira, nome de campus e quantidade de lixo gerado em quilos;<br>
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
-    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
-    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
-    e deve ser criada antes do modelo conceitual
-    c) Após criada esta tabela não deve ser modificada, pois será comparada com os resultados finais na conclusão do trabalho
     
-![Tabela de dados da Colors Company]
 (https://github.com/colorscompany/trabalho01/blob/master/Tabela_ColorsCompany.ods?raw=true "Tabela - Colors Company")
 
-    
-## Marco de Entrega 04 em: (15/05/2019)<br>
 
 ### 5.MODELO CONCEITUAL<br>
     A) NOTACAO ENTIDADE RELACIONAMENTO 
