@@ -55,8 +55,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
         
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+    [Grupo01]: Cecília Bastazini e Pedro Henrique
     
 ## Marco de Entrega 05 em: (20/05/2019)<br>
 
