@@ -36,8 +36,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
     
-(https://github.com/colorscompany/trabalho01/blob/master/Tabela_ColorsCompany.ods?raw=true "Tabela - Colors Company")
-
+(https://github.com/colorscompany/trabalho01/blob/master/Tabela_ColorsCompanyATUALIZADA.ods?raw=true "Tabela - Colors Company")
 
 ### 5.MODELO CONCEITUAL<br>
     A) NOTACAO ENTIDADE RELACIONAMENTO 
