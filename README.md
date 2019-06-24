@@ -60,13 +60,28 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 ## Marco de Entrega 05 em: (20/05/2019)<br>
 
 #### 5.2 DESCRIÇÃO DOS DADOS 
-    [objeto]: [descrição do objeto]
+
+    USUÁRIO: Tabela que armazena as informações relativas ao Usuário<br>
+     NOME: campo que armazena o nome de cada usuário.<br>
+     MATRÍCULA: campo que armazena a matrícula de cada usuário, tanto professores, como alunos.<br>
+     SÉRIE: campo que armazena a série em que os usuários que são alunos se encontram.<br>
+     CURSO: campo que armazena o curso que os usuários que são alunos estão matriculados.<br>
+     
+    MATERIAL: Tabela que armazena as informações relativas aos materiais descartados.<br>
+     NOME: campo que armazena o nome de cada material descartado.<br>
+     TIPO: campo que armazena o tipo do material descartado, este pode ser: papel, plástico, vidro, metal ou orgânico.<br>
+     PESO: campo que armazena o peso de cada material descartado em gramas.<br>
     
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
-    
-    
+    LIXEIRA:Tabela que armazena as informações relativas às Lixeiras<br>
+     COR: campo que armazena a cor de cada lixeira.<br>
+     NÚMERO: campo que armazana o número de cada lixeira.<br>
+     MATERIAL: campo que armazena o tipo de material que pode ser descartado em cada lixeira.<br>
+     CAPACIDADE: campo que armazena a capacidade de cada lixeira em litros.<br>
+     LOCALIZAÇÃO: campo que armazena a localização, ou seja, em qual campus do Ifes cada lixeira se encontra.<br>
+     
+    DIA: Tabela que armazena a data atual e a quantidade de lixo que foi gerado nesse dia.<br>
+     DATA: campo que armazena o dia, o mês e o ano atuais.<br>
+     QUANTIDADE DE LIXO: campo que armazena a quantidade de lixo gerado em um dia em gramas.<br>
 
 ## Marco de Entrega 06 em: (22/05/2019)<br>
 
