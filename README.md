@@ -65,6 +65,8 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
     EXEMPLO:
     CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
     CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+    
+    
 
 ## Marco de Entrega 06 em: (22/05/2019)<br>
 
