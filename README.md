@@ -79,8 +79,61 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
        
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas DDL 
-        (criação de tabelas, alterações, etc..)          
+        /* Lógico_1: */
+
+CREATE TABLE Usuario (
+    nome CHAR,
+    matricula CHAR PRIMARY KEY,
+    serie CHAR,
+    curso CHAR
+);
+
+CREATE TABLE Material (
+    nome CHAR,
+    tipo CHAR,
+    peso FLOAT,
+    codigo INTEGER PRIMARY KEY
+);
+
+CREATE TABLE Lixeira (
+    cor CHAR,
+    numero INTEGER PRIMARY KEY,
+    material CHAR,
+    capacidade FLOAT,
+    localizacao CHAR
+);
+
+CREATE TABLE Dia (
+    qtd_lixo FLOAT,
+    data DATE PRIMARY KEY
+);
+
+CREATE TABLE Descarta_Material_Usuario_Lixeira_Dia (
+    fk_Material_codigo INTEGER,
+    fk_Usuario_matricula CHAR,
+    fk_Lixeira_numero INTEGER,
+    fk_Dia_data DATE
+);
+ 
+ALTER TABLE Descarta_Material_Usuario_Lixeira_Dia ADD CONSTRAINT FK_Descarta_Material_Usuario_Lixeira_Dia_1
+    FOREIGN KEY (fk_Material_codigo)
+    REFERENCES Material (codigo)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE Descarta_Material_Usuario_Lixeira_Dia ADD CONSTRAINT FK_Descarta_Material_Usuario_Lixeira_Dia_2
+    FOREIGN KEY (fk_Usuario_matricula)
+    REFERENCES Usuario (matricula)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE Descarta_Material_Usuario_Lixeira_Dia ADD CONSTRAINT FK_Descarta_Material_Usuario_Lixeira_Dia_3
+    FOREIGN KEY (fk_Lixeira_numero)
+    REFERENCES Lixeira (numero)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE Descarta_Material_Usuario_Lixeira_Dia ADD CONSTRAINT FK_Descarta_Material_Usuario_Lixeira_Dia_4
+    FOREIGN KEY (fk_Dia_data)
+    REFERENCES Dia (data)
+    ON DELETE NO ACTION;         
 
 ## Marco de Entrega 07 em: (27/05/2019)<br>
 
