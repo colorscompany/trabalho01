@@ -36,7 +36,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
     
-![Alt text](https://github.com/colorscompany/trabalho01/blob/master/Tabela_ColorsCompanyATUALIZADA.ods?raw=true "Tabela - Colors Company")
+(https://github.com/colorscompany/trabalho01/blob/master/Tabela_ColorsCompanyATUALIZADA.ods?raw=true "Tabela - Colors Company")
 
 ### 5.MODELO CONCEITUAL<br>
         
@@ -75,6 +75,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 ## Marco de Entrega 06 em: (22/05/2019)<br>
 
 ### 6	MODELO LÓGICO<br>
+
        ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/logico.PNG?raw=true "Modelo Lógico")
 
 ### 7	MODELO FÍSICO<br>
