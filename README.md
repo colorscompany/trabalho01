@@ -36,7 +36,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
     
-(https://github.com/colorscompany/trabalho01/blob/master/Tabela_ColorsCompanyATUALIZADA.ods?raw=true "Tabela - Colors Company")
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/Tabela_ColorsCompanyATUALIZADA.ods?raw=true "Tabela - Colors Company")
 
 ### 5.MODELO CONCEITUAL<br>
         
@@ -44,7 +44,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
    
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: Caio Lessa e Lucas Tejada
-    [Grupo02]: 
+    [Grupo02]: Julia Suzano e Beatriz Auer
     
 ## Marco de Entrega 05 em: (20/05/2019)<br>
 
@@ -75,9 +75,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 ## Marco de Entrega 06 em: (22/05/2019)<br>
 
 ### 6	MODELO LÓGICO<br>
-        a) inclusão do modelo lógico do banco de dados
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
+       ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/logico.PNG?raw=true "Modelo Lógico")
 
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas DDL 
