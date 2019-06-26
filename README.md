@@ -75,8 +75,8 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 ## Marco de Entrega 06 em: (22/05/2019)<br>
 
 ### 6	MODELO LÓGICO<br>
-
-       (https://github.com/colorscompany/trabalho01/blob/master/logico.PNG?raw=true "Modelo Lógico")
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/imagens/modelo_logico.png?raw=true "Modelo Conceitual")
+       
 
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas DDL 
