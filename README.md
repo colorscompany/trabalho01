@@ -76,7 +76,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 
 ### 6	MODELO LÓGICO<br>
 
-       ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/logico.PNG?raw=true "Modelo Lógico")
+       (https://github.com/colorscompany/trabalho01/blob/master/logico.PNG?raw=true "Modelo Lógico")
 
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas DDL 
