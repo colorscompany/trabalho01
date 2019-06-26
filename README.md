@@ -43,7 +43,8 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/ConceitualATT.PNG?raw=true "Modelo Conceitual")
    
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: Cecília Bastazini e Pedro Henrique
+    [Grupo01]: Caio Lessa e Lucas Tejada
+    [Grupo02]: 
     
 ## Marco de Entrega 05 em: (20/05/2019)<br>
 
