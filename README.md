@@ -17,7 +17,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 
 ### 3.MINI-MUNDO Novo<br>
 
-> O sistema proposto para “Colors Company” conterá as informações acerca dos materiais descartados, lixeiras e usuários cadastrados.Dos Materiais Descartados serão armazenados o nome, foto, material, peso(em Kg). Das Lixeiras serão armazenados o número, cor, material, capacidade(em Kg), localização e espaço livre. Dos usuários, serão armazenados o nome, foto, matrícula, campus, curso e série. O sistema irá gerar um histórico contendo todas as informações dos produtos cadastrados pelos usuários, um histórico com as informações dos usuários e outro com as informações das lixeiras.
+> O sistema proposto para “Colors Company” conterá as informações acerca dos materiais descartados, lixeiras, usuários cadastrados e dia. Dos Materiais Descartados serão armazenados o nome, tipo, peso(em g) e código. Das Lixeiras serão armazenados o número, cor, material, capacidade(em Kg) e localização. Dos usuários, serão armazenados o nome, matrícula, curso e série. Do dia, serão armazenados a data e a quantidade de lixo gerado. 
 
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
@@ -30,9 +30,9 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
     
 > A Colors Company precisa inicialmente dos seguintes relatórios:<br>
     • Relatório que informe quais são os usuários de cada campus incluindo as seguintes informações: nome do usuário, matrícula, período/série e curso;<br>
-    • Relatório de materiais para descarte incluindo as seguintes informações: Nome do material, Tipo do material, Peso do produto;<br>
-    • Relatório de lixeiras, incluindo as seguintes informações: Cor, Número, Material, Capacidade(em Litros), localização e a porcentagem de espaço livre;<br>
-    • Relatório com a quantidade de lixo descartado em um dia em cada campus, incluindo as seguintes informações: número da lixeira, nome de campus e quantidade de lixo gerado em quilos;<br>
+    • Relatório de materiais para descarte incluindo as seguintes informações: Nome do material, Código do material, Tipo do material, Peso do material;<br>
+    • Relatório de lixeiras, incluindo as seguintes informações: Cor, Número, Material, Capacidade(em Litros) e localização;<br>
+    • Relatório do dia em cada campus, incluindo as seguintes informações:  Data e quantidade de lixo gerado em quilos;<br>
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
     
