@@ -39,20 +39,9 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 (https://github.com/colorscompany/trabalho01/blob/master/Tabela_ColorsCompanyATUALIZADA.ods?raw=true "Tabela - Colors Company")
 
 ### 5.MODELO CONCEITUAL<br>
-    A) NOTACAO ENTIDADE RELACIONAMENTO 
-        * Para nosso prótótipo limitaremos o modelo conceitual nas 5 principais entidades do escopo
-        * O protótipo deve possui no mínimo duas relações N para N
-        * o mínimo de entidades do modelo conceitual será igual a 5
         
-![Alt text](https://github.com/colorscompany/trabalho01/blob/master/Conceitual%20Print.PNG?raw=true "Modelo Conceitual")
-    
-    B) QUALIDADE 
-        Garantir que a semântica dos atributos seja clara no esquema
-        Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
-        e tuplas falsas
-    
-        
-    
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/ConceitualATT.PNG?raw=true "Modelo Conceitual")
+   
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: Cecília Bastazini e Pedro Henrique
     
