@@ -138,8 +138,11 @@ ALTER TABLE Descarta_Material_Usuario_Lixeira_Dia ADD CONSTRAINT FK_Descarta_Mat
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físic
-        b) formato .SQL
+INSERT INTO USUARIO (NOME, MATRICULA, SERIE, CURSO) VALUES 
+('Ariana Grande', '20181tiimi8373', ''),
+('Motor', 10, 'Rio Claro'),
+('Prédio Central', 20, 'Campinas'),
+('Águas Limpas',25,'Vitória');
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
         a) Junção dos scripts anteriores em um único script 
