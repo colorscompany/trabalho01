@@ -153,7 +153,7 @@ INSERT INTO USUARIO (NOME, MATRICULA, SERIE, CURSO) VALUES<br>
 INSERT INTO MATERIAL (NOME, TIPO, PESO, CODIGO) VALUES<br> 
 ('Garrafa Pet', 'Plástico', 50, 123),<br> 
 ('Guardanapo', 'Papel', 5, 222),<br> 
-('Lata de Refri', 'Metal', 14.5, 627),<br> 
+('Lata de Refri', 'Metal', 14.5, 628),<br> 
 ('Casca de Banana', 'Orgânico', 80, 782),<br> 
 ('Folha de Prova', 'Papel', 5, 235),<br> 
 ('Canudo', 'Plástico', 9, 234),<br> 
@@ -189,6 +189,64 @@ INSERT INTO DIA (QTD_LIXO, DATA) VALUES<br>
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
         a) Junção dos scripts anteriores em um único script 
         (create para tabelas e estruturas de dados + dados a serem inseridos)
+CREATE TABLE Usuario ( nome VARCHAR(23), matricula VARCHAR(14) PRIMARY KEY, serie VARCHAR(5), curso VARCHAR(50));<br>
+
+CREATE TABLE Material ( nome VARCHAR(23), tipo VARCHAR(10), peso FLOAT, codigo INTEGER PRIMARY KEY );<br>
+
+CREATE TABLE Lixeira ( cor VARCHAR(15), numero INTEGER PRIMARY KEY, material VARCHAR(23), capacidade FLOAT, localizacao VARCHAR(20) );<br>
+
+CREATE TABLE Dia ( qtd_lixo FLOAT, data DATE PRIMARY KEY );<br>
+
+CREATE TABLE Descarta_Material_Usuario_Lixeira_Dia ( fk_Material_codigo INTEGER, fk_Usuario_matricula VARCHAR, fk_Lixeira_numero INTEGER, fk_Dia_data DATE );<br>
+
+INSERT INTO USUARIO (NOME, MATRICULA, SERIE, CURSO) VALUES<br>
+('Ariana Grande', '20181tiimi8373', '2', 'Informática'),<br>
+('Im Na Yeon', '20161tiimi8788', '4', 'Informática'),<br>
+('Kim Taehyung', '2019prof8888', NULL, NULL),<br>
+('Park Jimin', '2014bsi6666', '3', 'Sistema de Informações'),<br>
+('Min Yoongi', '2017tiimi1212', '1', 'Informática'),<br>
+('Jung Hoseok', '20191tiimi7787', '3', 'Informática'),<br>
+('Jeon Jungkook', '20161prof5657', NULL, NULL),<br>
+('Kim Seokjin', '20181bsi3526', '2', 'Sistema de Informações'),<br>
+('Kim Namjoon', '20191tiimi3677', '1', 'Informática'),<br>
+('Hirai Momo', '20181bsi4646', '1', 'Sistema de Informações');<br>
+
+INSERT INTO MATERIAL (NOME, TIPO, PESO, CODIGO) VALUES<br>
+('Garrafa Pet', 'Plástico', 50, 123),<br>
+('Guardanapo', 'Papel', 5, 222),<br>
+('Lata de Refri', 'Metal', 14.5, 628),<br>
+('Casca de Banana', 'Orgânico', 80, 782),<br>
+('Folha de Prova', 'Papel', 5, 235),<br>
+('Canudo', 'Plástico', 9, 234),<br>
+('Garrafa de Vidro', 'Vidro', 400, 682),<br>
+('Papel de Bala', 'Plástico', 9, 908),<br>
+('Lata de Refri', 'Metal', 50, 627),<br>
+('Casca de Tangerina', 'Orgânico', 80, 187);<br>
+
+INSERT INTO LIXEIRA (COR, NUMERO, MATERIAL, CAPACIDADE, LOCALIZACAO) VALUES<br> 
+('Vermelho', 4, 'Plástico', 50, 'Campus Serra'),<br>
+('Azul', 23, 'Papel', 40, 'Campus Vitória'),<br>
+('Amarelo', 289, 'Metal', 100, 'Campus Cariacica'),<br>
+('Marrom', 33, 'Orgânico', 50, 'Campus Nova Venécia'),<br>
+('Azul', 44, 'Papel', 200, 'Campus Aracruz'),<br>
+('Vermelho', 122, 'Plástico', 150, 'Campus Montanha'),<br>
+('Verde', 28, 'Vidro', 100, 'Campus Santa Teresa'),<br>
+('Vermelho', 3, 'Plástico', 40, 'Campus Vila Velha'),<br>
+('Amarelo', 90, 'Metal', 150, 'Campus Itapina'),<br>
+('Marrom', 30, 'Orgânico', 50, 'Campus Guarapari');<br>
+
+INSERT INTO DIA (QTD_LIXO, DATA) VALUES
+(3, '2019/10/20'),<br>
+(7, '2019/06/25'),<br>
+(1, '2019/09/01'),<br>
+(3, '2019/02/03'),<br>
+(10, '2019/07/24'),<br>
+(7, '2019/07/25'),<br>
+(8, '2019/09/10'),<br>
+(10, '2019/06/24'),<br>
+(4, '2019/05/30'),<br>
+(1, '2019/07/03');<br>
+
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
