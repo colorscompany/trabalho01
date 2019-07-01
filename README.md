@@ -80,39 +80,16 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 
 ### 7	MODELO FÍSICO<br>
 
-CREATE TABLE Usuario (
-    nome CHAR,
-    matricula CHAR PRIMARY KEY,
-    serie CHAR,
-    curso CHAR
-);
+        
+CREATE TABLE Usuario ( nome VARCHAR(23), matricula VARCHAR(14) PRIMARY KEY, serie VARCHAR(5), curso VARCHAR(50));<br>
 
-CREATE TABLE Material (
-    nome CHAR,
-    tipo CHAR,
-    peso FLOAT,
-    codigo INTEGER PRIMARY KEY
-);
+CREATE TABLE Material ( nome VARCHAR(23), tipo VARCHAR(10), peso FLOAT, codigo INTEGER PRIMARY KEY );<br>
 
-CREATE TABLE Lixeira (
-    cor CHAR,
-    numero INTEGER PRIMARY KEY,
-    material CHAR,
-    capacidade FLOAT,
-    localizacao CHAR
-);
+CREATE TABLE Lixeira ( cor VARCHAR(15), numero INTEGER PRIMARY KEY, material VARCHAR(23), capacidade FLOAT, localizacao VARCHAR(20) );<br>
 
-CREATE TABLE Dia (
-    qtd_lixo FLOAT,
-    data DATE PRIMARY KEY
-);
+CREATE TABLE Dia ( qtd_lixo FLOAT, data DATE PRIMARY KEY );<br>
 
-CREATE TABLE Descarta_Material_Usuario_Lixeira_Dia (
-    fk_Material_codigo INTEGER,
-    fk_Usuario_matricula CHAR,
-    fk_Lixeira_numero INTEGER,
-    fk_Dia_data DATE
-);
+CREATE TABLE Descarta_Material_Usuario_Lixeira_Dia ( fk_Material_codigo INTEGER, fk_Usuario_matricula VARCHAR, fk_Lixeira_numero INTEGER, fk_Dia_data DATE );<br>
  
 ALTER TABLE Descarta_Material_Usuario_Lixeira_Dia ADD CONSTRAINT FK_Descarta_Material_Usuario_Lixeira_Dia_1
     FOREIGN KEY (fk_Material_codigo)
