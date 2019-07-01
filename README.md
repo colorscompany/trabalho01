@@ -50,27 +50,27 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 
 #### 5.2 DESCRIÇÃO DOS DADOS 
 
-    USUÁRIO: Tabela que armazena as informações relativas ao Usuário<br>
-     NOME: campo que armazena o nome de cada usuário.<br>
-     MATRÍCULA: campo que armazena a matrícula de cada usuário, tanto professores, como alunos.<br>
-     SÉRIE: campo que armazena a série em que os usuários que são alunos se encontram.<br>
-     CURSO: campo que armazena o curso que os usuários que são alunos estão matriculados.<br>
+    USUÁRIO: Tabela que armazena as informações relativas ao Usuário
+     NOME: campo que armazena o nome de cada usuário.
+     MATRÍCULA: campo que armazena a matrícula de cada usuário, tanto professores, como alunos.
+     SÉRIE: campo que armazena a série em que os usuários que são alunos se encontram.
+     CURSO: campo que armazena o curso que os usuários que são alunos estão matriculados.
      
-    MATERIAL: Tabela que armazena as informações relativas aos materiais descartados.<br>
-     NOME: campo que armazena o nome de cada material descartado.<br>
-     TIPO: campo que armazena o tipo do material descartado, este pode ser: papel, plástico, vidro, metal ou orgânico.<br>
-     PESO: campo que armazena o peso de cada material descartado em gramas.<br>
+    MATERIAL: Tabela que armazena as informações relativas aos materiais descartados.
+     NOME: campo que armazena o nome de cada material descartado.
+     TIPO: campo que armazena o tipo do material descartado, este pode ser: papel, plástico, vidro, metal ou orgânico.
+     PESO: campo que armazena o peso de cada material descartado em gramas.
     
-    LIXEIRA:Tabela que armazena as informações relativas às Lixeiras<br>
-     COR: campo que armazena a cor de cada lixeira.<br>
-     NÚMERO: campo que armazana o número de cada lixeira.<br>
-     MATERIAL: campo que armazena o tipo de material que pode ser descartado em cada lixeira.<br>
-     CAPACIDADE: campo que armazena a capacidade de cada lixeira em litros.<br>
-     LOCALIZAÇÃO: campo que armazena a localização, ou seja, em qual campus do Ifes cada lixeira se encontra.<br>
+    LIXEIRA:Tabela que armazena as informações relativas às Lixeiras
+     COR: campo que armazena a cor de cada lixeira.
+     NÚMERO: campo que armazana o número de cada lixeira.
+     MATERIAL: campo que armazena o tipo de material que pode ser descartado em cada lixeira.
+     CAPACIDADE: campo que armazena a capacidade de cada lixeira em litros.
+     LOCALIZAÇÃO: campo que armazena a localização, ou seja, em qual campus do Ifes cada lixeira se encontra.
      
-    DIA: Tabela que armazena a data atual e a quantidade de lixo que foi gerado nesse dia.<br>
-     DATA: campo que armazena o dia, o mês e o ano atuais.<br>
-     QUANTIDADE DE LIXO: campo que armazena a quantidade de lixo gerado em um dia em gramas.<br>
+    DIA: Tabela que armazena a data atual e a quantidade de lixo que foi gerado nesse dia.
+     DATA: campo que armazena o dia, o mês e o ano atuais.
+     QUANTIDADE DE LIXO: campo que armazena a quantidade de lixo gerado em um dia em gramas.
 
 ## Marco de Entrega 06 em: (22/05/2019)<br>
 
