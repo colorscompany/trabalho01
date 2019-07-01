@@ -247,7 +247,7 @@ INSERT INTO DIA (QTD_LIXO, DATA) VALUES
 (4, '2019/05/30'),<br>
 (1, '2019/07/03');<br>
 
-        b) Criar um novo banco de dados para testar a restauracao 
+        b) Criar um novo banco de dados para testar a restauracao postgres://wzvtfjcc:dmyeQX...@raja.db.elephantsql.com:5432/wzvtfjcc 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
 #### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
