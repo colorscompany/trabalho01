@@ -31,7 +31,7 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 > A Colors Company precisa inicialmente dos seguintes relatórios:<br>
     • Relatório que informe quais são os usuários de cada campus incluindo as seguintes informações: nome do usuário, matrícula, período/série e curso;<br>
     • Relatório de materiais para descarte incluindo as seguintes informações: Nome do material, Código do material, Tipo do material, Peso do material;<br>
-    • Relatório de lixeiras, incluindo as seguintes informações: Cor, Número, Material, Capacidade(em Litros) e localização;<br>
+    • Relatório de lixeiras, incluindo as seguintes informações: Cor, Número, Material, Capacidade(em Litros) e localização(alterar para coordenadas);<br>
     • Relatório do dia em cada campus, incluindo as seguintes informações:  Data e quantidade de lixo gerado em quilos;<br>
 
 #### 4.2 TABELA DE DADOS DO SISTEMA:
