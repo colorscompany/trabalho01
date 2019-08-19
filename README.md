@@ -299,6 +299,18 @@ https://api.elephantsql.com/console/b0576abf-5bf5-4d35-a6b0-071283f4356f/browser
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/1.PNG?raw=true "Tabela1")<br>
+
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/2.PNG?raw=true "Tabela2")<br>
+
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/3.PNG?raw=true "Tabela3")<br>
+
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/4.PNG?raw=true "Tabela4")<br>
+
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/5.PNG?raw=true "Tabela5")<br>
+
+
+
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
