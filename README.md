@@ -307,7 +307,7 @@ https://api.elephantsql.com/console/b0576abf-5bf5-4d35-a6b0-071283f4356f/browser
 
 ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/4.PNG?raw=true "Tabela4")<br>
 
-![Alt text](https://github.com/colorscompany/trabalho01/blob/master/5.PNG?raw=true "Tabela5")<br>
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/6.PNG?raw=true "Tabela5")<br>
 
 
 
