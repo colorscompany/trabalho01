@@ -40,8 +40,6 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 (https://github.com/colorscompany/trabalho01/blob/master/Tabela_ColorsCompanyMOD.ods?raw=true "Tabela - Colors Company")
 
 ### 5.MODELO CONCEITUAL<br>
-        
-![Alt text](https://github.com/colorscompany/trabalho01/blob/master/ConceitualATT.PNG?raw=true "Modelo Conceitual")
 
 ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/modeloATUALIZADO.PNG?raw=true "Modelo Conceitual")
    
