@@ -41,7 +41,8 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 
 ### 5.MODELO CONCEITUAL<br>
 
-![Alt text](https://github.com/colorscompany/trabalho01/blob/master/modeloATUALIZADO.PNG?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/conceitualCerto.PNG?raw=true "Modelo Conceitual")
+
    
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: Caio Lessa e Lucas Tejada
