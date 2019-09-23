@@ -117,29 +117,22 @@ ALTER TABLE Descarta_Material_Usuario_Lixeira_Dia ADD CONSTRAINT FK_Descarta_Mat
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-INSERT INTO USUARIO (NOME, MATRICULA, SERIE, CURSO) VALUES<br> 
-('Ariana Grande', '20181tiimi8373', '2', 'Informática'),<br> 
-('Im Na Yeon', '20161tiimi8788', '4', 'Informática'),<br> 
-('Kim Taehyung', '2019prof8888', NULL, NULL),<br> 
-('Park Jimin', '2014bsi6666', '3', 'Sistema de Informações'),<br>
-('Min Yoongi', '2017tiimi1212', '1', 'Informática'),<br>
-('Jung Hoseok', '20191tiimi7787', '3', 'Informática'),<br>
-('Jeon Jungkook', '20161prof5657', NULL, NULL),<br>
-('Kim Seokjin', '20181bsi3526', '2', 'Sistema de Informações'),<br>
-('Kim Namjoon', '20191tiimi3677', '1', 'Informática'),<br>
-('Hirai Momo', '20181bsi4646', '1', 'Sistema de Informações');<br>
+insert into usurio (nome, matricula, serie) values <br>
+('Atlas', 201810304, '2'),<br>
+('Min', 201610307, '4'),<br>
+('Pedro', 201818687, '2'),<br>
+('Yoongi', 201713312, '3'),<br>
+('Momo', 201817477, '2'),<br>
+('Mina', 201915252, '1'),<br>
+('Sana', 201910308, '1'),<br>
+('Eden', 201816700, '2'),<br>
+('Dagny', 201710090, '3'),<br>
+('Tessa', 201611123, '4');<br>
 
-INSERT INTO MATERIAL (NOME, TIPO, PESO, CODIGO) VALUES<br> 
-('Garrafa Pet', 'Plástico', 50, 123),<br> 
-('Guardanapo', 'Papel', 5, 222),<br> 
-('Lata de Refri', 'Metal', 14.5, 628),<br> 
-('Casca de Banana', 'Orgânico', 80, 782),<br> 
-('Folha de Prova', 'Papel', 5, 235),<br> 
-('Canudo', 'Plástico', 9, 234),<br> 
-('Garrafa de Vidro', 'Vidro', 400, 682),<br> 
-('Papel de Bala', 'Plástico', 9, 908),<br> 
-('Lata de Refri', 'Metal', 50, 627),<br> 
-('Casca de Tangerina', 'Orgânico', 80, 187);<br> 
+insert into curso (codigo, nome_curso) values<br> 
+(1, 'Informatica'),<br>
+(2, 'Mecatronica'),<br>
+(3, 'Automacao Industrial');<br>
 
 INSERT INTO LIXEIRA (COR, NUMERO, MATERIAL, CAPACIDADE, LOCALIZACAO) VALUES<br> 
 ('Vermelho', 4, 'Plástico', 50, 'Campus Serra'),<br>
