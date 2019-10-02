@@ -63,11 +63,8 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
      CODIGO: campo que armazena um determinado codigo do curso, identificando-o.
      NOME_CURSO: campo que armazena o nome de um curso;
      
-    
-     
     MATERIAL: Tabela que armazena as informações relativas aos materiais descartados.
-     NOME: campo que armazena o nome de cada material descartado.
-     TIPO: campo que armazena o tipo do material descartado, este pode ser: papel, plástico, vidro, metal ou orgânico.
+     CODIGO: campo que armazena o código de um material, identificando-o.
      PESO: campo que armazena o peso de cada material descartado em gramas.
     
     LIXEIRA:Tabela que armazena as informações relativas às Lixeiras
