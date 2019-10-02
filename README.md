@@ -56,9 +56,14 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 
     USUÁRIO: Tabela que armazena as informações relativas ao Usuário
      NOME: campo que armazena o nome de cada usuário.
-     MATRÍCULA: campo que armazena a matrícula de cada usuário, tanto professores, como alunos.
+     MATRÍCULA: campo que armazena a matrícula de cada usuário, identificando-o.
      SÉRIE: campo que armazena a série em que os usuários que são alunos se encontram.
-     CURSO: campo que armazena o curso que os usuários que são alunos estão matriculados.
+     
+    CURSO: Tabela que armazena informações relativas ao Curso.
+     CODIGO: campo que armazena um determinado codigo do curso, identificando-o.
+     NOME_CURSO: campo que armazena o nome de um curso;
+     
+    
      
     MATERIAL: Tabela que armazena as informações relativas aos materiais descartados.
      NOME: campo que armazena o nome de cada material descartado.
