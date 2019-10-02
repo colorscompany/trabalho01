@@ -61,22 +61,28 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
      
     CURSO: Tabela que armazena informações relativas ao Curso.
      CODIGO: campo que armazena um determinado codigo do curso, identificando-o.
-     NOME_CURSO: campo que armazena o nome de um curso;
+     NOME_CURSO: campo que armazena o nome de um curso.
      
     MATERIAL: Tabela que armazena as informações relativas aos materiais descartados.
      CODIGO: campo que armazena o código de um material, identificando-o.
      PESO: campo que armazena o peso de cada material descartado em gramas.
     
+    TIPO_MATERIAL: Tabela que armazena as informações relativas aos tipos de materiais descartados.
+     CODIGO: campo que armazena o código de um tipo, identificando-o.
+     NOME_TIPO: campo que armazena o nome de um tipo de um material(Ex: plástico).
+     
     LIXEIRA:Tabela que armazena as informações relativas às Lixeiras
      COR: campo que armazena a cor de cada lixeira.
-     NÚMERO: campo que armazana o número de cada lixeira.
-     MATERIAL: campo que armazena o tipo de material que pode ser descartado em cada lixeira.
+     NÚMERO: campo que armazana o número de cada lixeira, identificando-a.
      CAPACIDADE: campo que armazena a capacidade de cada lixeira em litros.
-     LOCALIZAÇÃO: campo que armazena a localização, ou seja, em qual campus do Ifes cada lixeira se encontra.
      
-    DIA: Tabela que armazena a data atual e a quantidade de lixo que foi gerado nesse dia.
-     DATA: campo que armazena o dia, o mês e o ano atuais.
-     QUANTIDADE DE LIXO: campo que armazena a quantidade de lixo gerado em um dia em gramas.
+    LOCALIZAÇÃO: Tabela que armazena a localização.
+     CAMPUS: campo que armazena em qual campus a lixeira se localiza.
+     COORDENADAS: campo que armazena as coordenadas geográficas de uma lixeira. 
+     BLOCO: campo que armazena o bloco em que a lixeira se localiza.
+    
+    DESCARTA: Tabela que armazena as informações de descarte dos materiais em uma lixeira, em uma data, por um usuário;
+     DATA: campo que armazena a data de descarte.
 
 ## Marco de Entrega 06 em: (22/05/2019)<br>
 
