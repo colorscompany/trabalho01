@@ -93,35 +93,106 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 ### 7	MODELO FÍSICO<br>
 
         
-CREATE TABLE Usuario ( nome VARCHAR(23), matricula VARCHAR(14) PRIMARY KEY, serie VARCHAR(5), curso VARCHAR(50));<br>
+C/* logicocerto: */
 
-CREATE TABLE Material ( nome VARCHAR(23), tipo VARCHAR(10), peso FLOAT, codigo INTEGER PRIMARY KEY );<br>
+CREATE TABLE Usuário (
+    nome VARCHAR,
+    matricula INTEGER PRIMARY KEY,
+    serie VARCHAR
+);
 
-CREATE TABLE Lixeira ( cor VARCHAR(15), numero INTEGER PRIMARY KEY, material VARCHAR(23), capacidade FLOAT, localizacao VARCHAR(20) );<br>
+CREATE TABLE Curso (
+    codigo INTEGER PRIMARY KEY,
+    nome_curso VARCHAR
+);
 
-CREATE TABLE Dia ( qtd_lixo FLOAT, data DATE PRIMARY KEY );<br>
+CREATE TABLE Material (
+    codigo INTEGER PRIMARY KEY,
+    peso FLOAT
+);
 
-CREATE TABLE Descarta_Material_Usuario_Lixeira_Dia ( fk_Material_codigo INTEGER, fk_Usuario_matricula VARCHAR, fk_Lixeira_numero INTEGER, fk_Dia_data DATE );<br>
+CREATE TABLE Lixeira (
+    numero INTEGER PRIMARY KEY,
+    cor VARCHAR,
+    capacidade FLOAT
+);
+
+CREATE TABLE Localização (
+    campus VARCHAR,
+    coordenada VARCHAR PRIMARY KEY,
+    bloco INTEGER
+);
+
+CREATE TABLE Tipo_material (
+    codigo INTEGER PRIMARY KEY,
+    nome_tipo VARCHAR
+);
+
+CREATE TABLE Descarte (
+    fk_Material_codigo INTEGER,
+    fk_Lixeira_numero INTEGER,
+    fk_Usuário_matricula INTEGER
+);
+
+CREATE TABLE Usuario_curso (
+    fk_Usuário_matricula INTEGER,
+    fk_Curso_codigo INTEGER
+);
+
+CREATE TABLE Material_tipo (
+    fk_Tipo_material_codigo INTEGER,
+    fk_Material_codigo INTEGER
+);
+
+CREATE TABLE Lixeira_Localização (
+    fk_Lixeira_numero INTEGER,
+    fk_Localização_coordenada VARCHAR
+);
  
-ALTER TABLE Descarta_Material_Usuario_Lixeira_Dia ADD CONSTRAINT FK_Descarta_Material_Usuario_Lixeira_Dia_1
+ALTER TABLE Descarte ADD CONSTRAINT FK_Descarte_1
     FOREIGN KEY (fk_Material_codigo)
     REFERENCES Material (codigo)
     ON DELETE NO ACTION;
  
-ALTER TABLE Descarta_Material_Usuario_Lixeira_Dia ADD CONSTRAINT FK_Descarta_Material_Usuario_Lixeira_Dia_2
-    FOREIGN KEY (fk_Usuario_matricula)
-    REFERENCES Usuario (matricula)
-    ON DELETE NO ACTION;
- 
-ALTER TABLE Descarta_Material_Usuario_Lixeira_Dia ADD CONSTRAINT FK_Descarta_Material_Usuario_Lixeira_Dia_3
+ALTER TABLE Descarte ADD CONSTRAINT FK_Descarte_2
     FOREIGN KEY (fk_Lixeira_numero)
     REFERENCES Lixeira (numero)
     ON DELETE NO ACTION;
  
-ALTER TABLE Descarta_Material_Usuario_Lixeira_Dia ADD CONSTRAINT FK_Descarta_Material_Usuario_Lixeira_Dia_4
-    FOREIGN KEY (fk_Dia_data)
-    REFERENCES Dia (data)
-    ON DELETE NO ACTION;         
+ALTER TABLE Descarte ADD CONSTRAINT FK_Descarte_3
+    FOREIGN KEY (fk_Usuário_matricula)
+    REFERENCES Usuário (matricula)
+    ON DELETE NO ACTION;
+ 
+ALTER TABLE Usuario_curso ADD CONSTRAINT FK_Usuario_curso_1
+    FOREIGN KEY (fk_Usuário_matricula)
+    REFERENCES Usuário (matricula)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Usuario_curso ADD CONSTRAINT FK_Usuario_curso_2
+    FOREIGN KEY (fk_Curso_codigo)
+    REFERENCES Curso (codigo)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Material_tipo ADD CONSTRAINT FK_Material_tipo_1
+    FOREIGN KEY (fk_Tipo_material_codigo)
+    REFERENCES Tipo_material (codigo)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Material_tipo ADD CONSTRAINT FK_Material_tipo_2
+    FOREIGN KEY (fk_Material_codigo)
+    REFERENCES Material (codigo)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Lixeira_Localização ADD CONSTRAINT FK_Lixeira_Localização_1
+    FOREIGN KEY (fk_Lixeira_numero)
+    REFERENCES Lixeira (numero)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Lixeira_Localização ADD CONSTRAINT FK_Lixeira_Localização_2
+    FOREIGN KEY (fk_Localização_coordenada)
+    REFERENCES Localização (coordenada)
+    ON DELETE SET NULL;
 
 ## Marco de Entrega 07 em: (27/05/2019)<br>
 
