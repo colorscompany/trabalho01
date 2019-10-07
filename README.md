@@ -92,9 +92,6 @@ Este documento contém a especificação do projeto do banco de dados Colors Com
 
 ### 7	MODELO FÍSICO<br>
 
-        
-C/* logicocerto: */
-
 CREATE TABLE Usuário (
     nome VARCHAR,
     matricula INTEGER PRIMARY KEY,
