@@ -195,46 +195,113 @@ ALTER TABLE Lixeira_Localização ADD CONSTRAINT FK_Lixeira_Localização_2
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-insert into usurio (nome, matricula, serie) values <br>
-('Atlas', 201810304, '2'),<br>
-('Min', 201610307, '4'),<br>
-('Pedro', 201818687, '2'),<br>
-('Yoongi', 201713312, '3'),<br>
-('Momo', 201817477, '2'),<br>
-('Mina', 201915252, '1'),<br>
-('Sana', 201910308, '1'),<br>
-('Eden', 201816700, '2'),<br>
-('Dagny', 201710090, '3'),<br>
-('Tessa', 201611123, '4');<br>
+CURSO
+insert into curso values (1,'Informatica'), (2,'Mecatronica'), (3,'Automacao Industrial'), (4,'Sistema de Informacoes'), (5,'Anatomia');
 
-insert into curso (codigo, nome_curso) values<br> 
-(1, 'Informatica'),<br>
-(2, 'Mecatronica'),<br>
-(3, 'Automacao Industrial');<br>
+DESCARTE
+*falta
 
-INSERT INTO LIXEIRA (COR, NUMERO, MATERIAL, CAPACIDADE, LOCALIZACAO) VALUES<br> 
-('Vermelho', 4, 'Plástico', 50, 'Campus Serra'),<br>
-('Azul', 23, 'Papel', 40, 'Campus Vitória'),<br>
-('Amarelo', 289, 'Metal', 100, 'Campus Cariacica'),<br>
-('Marrom', 33, 'Orgânico', 50, 'Campus Nova Venécia'),<br>
-('Azul', 44, 'Papel', 200, 'Campus Aracruz'),<br>
-('Vermelho', 122, 'Plástico', 150, 'Campus Montanha'),<br>
-('Verde', 28, 'Vidro', 100, 'Campus Santa Teresa'),<br>
-('Vermelho', 3, 'Plástico', 40, 'Campus Vila Velha'),<br>
-('Amarelo', 90, 'Metal', 150, 'Campus Itapina'),<br>
-('Marrom', 30, 'Orgânico', 50, 'Campus Guarapari');<br>
+LIXEIRA
+fake_factory = Factory.create('pt_BR')
+cur.execute("start transaction")
 
-INSERT INTO DIA (QTD_LIXO, DATA) VALUES<br> 
-(3, '2019/10/20'),<br>
-(7, '2019/06/25'),<br>
-(1, '2019/09/01'),<br>
-(3, '2019/02/03'),<br>
-(10, '2019/07/24'),<br>
-(7, '2019/07/25'),<br>
-(8, '2019/09/10'),<br>
-(10, '2019/06/24'),<br>
-(4, '2019/05/30'),<br>
-(1, '2019/07/03');<br>
+cores = ['azul', 'vermelho', 'verde', 'amarelo', 'preto', 'laranja', 'branco', 'roxo', 'marrom']
+
+for i in range(100):
+  id=i+1
+  numero = fake.ean8()
+  cor = random.choice(cores)
+  capacidade = np.random.randint(low=10,high=200)
+  insert_instruction = """insert into lixeira values (%s,%s,%s)"""
+ 
+  insert_values = (numero, cor, capacidade)
+  cur.execute(insert_instruction, insert_values)
+
+LIXEIRA_LOCALIZAO
+*parcialmente completa
+insert into lixeira_localizao (fk_lixeira_numero) select numero from lixeira; 
+
+
+
+LOCALIZAO
+
+fake_factory = Factory.create('pt_BR')
+cur.execute("start transaction")
+for i in range(100):
+  id=i+1
+  campus = fake_factory.city()
+  coordenada = fake_factory.coordinate(center=None, radius=0.001)
+  bloco = np.random.randint(low=1,high=10)
+  insert_instruction = """insert into localizao values (%s,%s,%s)"""
+ 
+  insert_values = (campus, coordenada, bloco)
+  cur.execute(insert_instruction, insert_values)
+
+MATERIAL
+fake_factory = Factory.create('pt_BR')
+cur.execute("start transaction")
+
+for i in range(100):
+  id = i + 1
+  codigo = fake.ean8()
+  peso = np.random.randint(low=1,high=100)
+  insert_instruction = """insert into material values (%s,%s)"""
+ 
+  insert_values = (codigo, peso)
+  cur.execute(insert_instruction, insert_values)
+
+MATERIAL_TIPO
+*falta
+
+TIPO_MATERIAL
+insert into tipo_material values (1,'papel'), (2,'plastico'), (3,'vidro'), (4,'metal'), (5,'madeira'), (6,'eletronicos'), (7,'hospitalar'), (8,'radioativos'), (9,'organico');
+
+USURIO_CURSO
+import pandas as pd
+resultado = pd.read_sql_query("select matricula from usurio",conn)
+
+res_curso=pd.read_sql_query("select * from curso",conn)
+len(res_curso)
+
+fake_factory = Factory.create('pt_BR')
+cur.execute("start transaction")
+count=1
+for i in resultado.values:
+  print(count)
+  count=count+1
+  matricula = i[0]
+  #print(type(matricula))
+  #print(matricula)
+  codigo = np.random.randint(low=1,high=6)
+  #print(type(codigo))
+  insert_instruction = """insert into usuario_curso values (%s,%s)"""
+  insert_values = (int(matricula),codigo)
+  print(insert_instruction,insert_values)
+  cur.execute(insert_instruction, insert_values)
+cur.execute("commit")
+
+USURIO
+fake_factory = Factory.create('pt_BR')
+from faker.providers import barcode
+
+from faker import Faker
+from faker.providers import barcode
+
+fake = Faker()
+fake.add_provider(barcode)
+
+fake_factory = Factory.create('pt_BR')
+cur.execute("start transaction")
+for i in range(100):
+  id=i+1
+  nome = fake_factory.name()
+  matricula = fake.ean8()
+  serie = np.random.randint(low=1,high=4)
+  insert_instruction = """insert into usurio values (%s,%s,%s)"""
+ 
+  insert_values = (nome, int(matricula), serie)
+  cur.execute(insert_instruction, insert_values)
+
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
         
