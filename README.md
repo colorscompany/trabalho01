@@ -396,8 +396,98 @@ for i in range(100):<br>
   cur.execute(insert_instruction, insert_values)<br>
   ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/lixeira.PNG?raw=true "Tabela1")<br>
 
-  
+LIXEIRA_LOCALIZAO:<br>
+insert into lixeira_localizao (fk_lixeira_numero) select numero from lixeira; <br>
 
+ ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/lixeira_localizao.PNG?raw=true "Tabela1")<br>
+
+LOCALIZAO: <br>
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+for i in range(100):<br>
+  id=i+1<br>
+  campus = fake_factory.city()<br>
+  coordenada = fake_factory.coordinate(center=None, radius=0.001)<br>
+  bloco = np.random.randint(low=1,high=10)<br>
+  insert_instruction = """insert into localizao values (%s,%s,%s)"""<br>
+ 
+  insert_values = (campus, coordenada, bloco)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+  
+  ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/localizao.PNG?raw=true "Tabela1")<br>
+  
+  MATERIAL: <br>
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+
+for i in range(100):<br>
+  id = i + 1<br>
+  codigo = fake.ean8()<br>
+  peso = np.random.randint(low=1,high=100)<br>
+  insert_instruction = """insert into material values (%s,%s)"""<br>
+ 
+  insert_values = (codigo, peso)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+  
+  ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/material.PNG?raw=true "Tabela1")<br>
+
+MATERIAL_TIPO: <br>
+*falta
+
+TIPO_MATERIAL: <br>
+insert into tipo_material values (1,'papel'), (2,'plastico'), (3,'vidro'), (4,'metal'), (5,'madeira'), (6,'eletronicos'), (7,'hospitalar'), (8,'radioativos'), (9,'organico');
+
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/tipo_material.PNG?raw=true "Tabela1")<br>
+
+USUARIO_CURSO: <br>
+import pandas as pd<br>
+resultado = pd.read_sql_query("select matricula from usurio",conn)<br>
+
+res_curso=pd.read_sql_query("select * from curso",conn)<br>
+len(res_curso)<br>
+
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+count=1<br>
+for i in resultado.values:<br>
+  print(count)<br>
+  count=count+1<br>
+  matricula = i[0]<br>
+  #print(type(matricula))<br>
+  #print(matricula)<br>
+  codigo = np.random.randint(low=1,high=6)<br>
+  #print(type(codigo))<br>
+  insert_instruction = """insert into usuario_curso values (%s,%s)"""<br>
+  insert_values = (int(matricula),codigo)<br>
+  print(insert_instruction,insert_values)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+cur.execute("commit")<br>
+
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/usuario_curso.PNG?raw=true "Tabela1")<br>
+
+USURIO: <br>
+fake_factory = Factory.create('pt_BR')<br>
+from faker.providers import barcode<br>
+
+from faker import Faker<br>
+from faker.providers import barcode<br>
+
+fake = Faker()<br>
+fake.add_provider(barcode)<br>
+
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+for i in range(100):<br>
+  id=i+1<br>
+  nome = fake_factory.name()<br>
+  matricula = fake.ean8()<br>
+  serie = np.random.randint(low=1,high=4)<br>
+  insert_instruction = """insert into usurio values (%s,%s,%s)"""<br>
+ 
+  insert_values = (nome, int(matricula), serie)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+  
+  ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/usurio.PNG?raw=true "Tabela1")<br>
 
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
