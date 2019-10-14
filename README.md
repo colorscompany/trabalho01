@@ -195,241 +195,448 @@ ALTER TABLE Lixeira_Localização ADD CONSTRAINT FK_Lixeira_Localização_2
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-CURSO
+CURSO<br>
 insert into curso values (1,'Informatica'), (2,'Mecatronica'), (3,'Automacao Industrial'), (4,'Sistema de Informacoes'), (5,'Anatomia');
 
-DESCARTE
+DESCARTE<br>
+*falta<br>
+
+LIXEIRA<br>
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+
+cores = ['azul', 'vermelho', 'verde', 'amarelo', 'preto', 'laranja', 'branco', 'roxo', 'marrom']<br>
+
+for i in range(100):<br>
+  id=i+1<br>
+  numero = fake.ean8()<br>
+  cor = random.choice(cores)<br>
+  capacidade = np.random.randint(low=10,high=200)<br>
+  insert_instruction = """insert into lixeira values (%s,%s,%s)"""<br>
+ 
+  insert_values = (numero, cor, capacidade)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+
+LIXEIRA_LOCALIZAO<br>
+*parcialmente completa<br>
+insert into lixeira_localizao (fk_lixeira_numero) select numero from lixeira; <br>
+
+LOCALIZAO<br>
+
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+for i in range(100):<br>
+  id=i+1<br>
+  campus = fake_factory.city()<br>
+  coordenada = fake_factory.coordinate(center=None, radius=0.001)<br>
+  bloco = np.random.randint(low=1,high=10)<br>
+  insert_instruction = """insert into localizao values (%s,%s,%s)"""<br>
+ 
+  insert_values = (campus, coordenada, bloco)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+
+MATERIAL<br>
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+
+for i in range(100):<br>
+  id = i + 1<br>
+  codigo = fake.ean8()<br>
+  peso = np.random.randint(low=1,high=100)<br>
+  insert_instruction = """insert into material values (%s,%s)"""<br>
+ 
+  insert_values = (codigo, peso)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+
+MATERIAL_TIPO<br>
 *falta
 
-LIXEIRA
-fake_factory = Factory.create('pt_BR')
-cur.execute("start transaction")
-
-cores = ['azul', 'vermelho', 'verde', 'amarelo', 'preto', 'laranja', 'branco', 'roxo', 'marrom']
-
-for i in range(100):
-  id=i+1
-  numero = fake.ean8()
-  cor = random.choice(cores)
-  capacidade = np.random.randint(low=10,high=200)
-  insert_instruction = """insert into lixeira values (%s,%s,%s)"""
- 
-  insert_values = (numero, cor, capacidade)
-  cur.execute(insert_instruction, insert_values)
-
-LIXEIRA_LOCALIZAO
-*parcialmente completa
-insert into lixeira_localizao (fk_lixeira_numero) select numero from lixeira; 
-
-
-
-LOCALIZAO
-
-fake_factory = Factory.create('pt_BR')
-cur.execute("start transaction")
-for i in range(100):
-  id=i+1
-  campus = fake_factory.city()
-  coordenada = fake_factory.coordinate(center=None, radius=0.001)
-  bloco = np.random.randint(low=1,high=10)
-  insert_instruction = """insert into localizao values (%s,%s,%s)"""
- 
-  insert_values = (campus, coordenada, bloco)
-  cur.execute(insert_instruction, insert_values)
-
-MATERIAL
-fake_factory = Factory.create('pt_BR')
-cur.execute("start transaction")
-
-for i in range(100):
-  id = i + 1
-  codigo = fake.ean8()
-  peso = np.random.randint(low=1,high=100)
-  insert_instruction = """insert into material values (%s,%s)"""
- 
-  insert_values = (codigo, peso)
-  cur.execute(insert_instruction, insert_values)
-
-MATERIAL_TIPO
-*falta
-
-TIPO_MATERIAL
+TIPO_MATERIAL<br>
 insert into tipo_material values (1,'papel'), (2,'plastico'), (3,'vidro'), (4,'metal'), (5,'madeira'), (6,'eletronicos'), (7,'hospitalar'), (8,'radioativos'), (9,'organico');
 
-USURIO_CURSO
-import pandas as pd
-resultado = pd.read_sql_query("select matricula from usurio",conn)
+USURIO_CURSO<br>
+import pandas as pd<br>
+resultado = pd.read_sql_query("select matricula from usurio",conn)<br>
 
-res_curso=pd.read_sql_query("select * from curso",conn)
-len(res_curso)
+res_curso=pd.read_sql_query("select * from curso",conn)<br>
+len(res_curso)<br>
 
-fake_factory = Factory.create('pt_BR')
-cur.execute("start transaction")
-count=1
-for i in resultado.values:
-  print(count)
-  count=count+1
-  matricula = i[0]
-  #print(type(matricula))
-  #print(matricula)
-  codigo = np.random.randint(low=1,high=6)
-  #print(type(codigo))
-  insert_instruction = """insert into usuario_curso values (%s,%s)"""
-  insert_values = (int(matricula),codigo)
-  print(insert_instruction,insert_values)
-  cur.execute(insert_instruction, insert_values)
-cur.execute("commit")
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+count=1<br>
+for i in resultado.values:<br>
+  print(count)<br>
+  count=count+1<br>
+  matricula = i[0]<br>
+  #print(type(matricula))<br>
+  #print(matricula)<br>
+  codigo = np.random.randint(low=1,high=6)<br>
+  #print(type(codigo))<br>
+  insert_instruction = """insert into usuario_curso values (%s,%s)"""<br>
+  insert_values = (int(matricula),codigo)<br>
+  print(insert_instruction,insert_values)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+cur.execute("commit")<br>
 
-USURIO
-fake_factory = Factory.create('pt_BR')
-from faker.providers import barcode
+USURIO<br>
+fake_factory = Factory.create('pt_BR')<br>
+from faker.providers import barcode<br>
 
-from faker import Faker
-from faker.providers import barcode
+from faker import Faker<br>
+from faker.providers import barcode<br>
 
-fake = Faker()
-fake.add_provider(barcode)
+fake = Faker()<br>
+fake.add_provider(barcode)<br>
 
-fake_factory = Factory.create('pt_BR')
-cur.execute("start transaction")
-for i in range(100):
-  id=i+1
-  nome = fake_factory.name()
-  matricula = fake.ean8()
-  serie = np.random.randint(low=1,high=4)
-  insert_instruction = """insert into usurio values (%s,%s,%s)"""
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction"<br>
+for i in range(100):<br>
+  id=i+1<br>
+  nome = fake_factory.name()<br>
+  matricula = fake.ean8()<br>
+  serie = np.random.randint(low=1,high=4)<br>
+  insert_instruction = """insert into usurio values (%s,%s,%s)"""<br>
  
-  insert_values = (nome, int(matricula), serie)
-  cur.execute(insert_instruction, insert_values)
+  insert_values = (nome, int(matricula), serie)<br>
+  cur.execute(insert_instruction, insert_values)<br>
 
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELA E INSERÇÃO DOS DADOS
         
-CREATE TABLE Usuario ( nome VARCHAR(23), matricula VARCHAR(14) PRIMARY KEY, serie VARCHAR(5), curso VARCHAR(50));<br>
+CREATE TABLE Usuário (
+    nome VARCHAR,
+    matricula INTEGER PRIMARY KEY,
+    serie VARCHAR
+);
 
-CREATE TABLE Material ( nome VARCHAR(23), tipo VARCHAR(10), peso FLOAT, codigo INTEGER PRIMARY KEY );<br>
+CREATE TABLE Curso (
+    codigo INTEGER PRIMARY KEY,
+    nome_curso VARCHAR
+);
 
-CREATE TABLE Lixeira ( cor VARCHAR(15), numero INTEGER PRIMARY KEY, material VARCHAR(23), capacidade FLOAT, localizacao VARCHAR(20) );<br>
+CREATE TABLE Material (
+    codigo INTEGER PRIMARY KEY,
+    peso FLOAT
+);
 
-CREATE TABLE Dia ( qtd_lixo FLOAT, data DATE PRIMARY KEY );<br>
+CREATE TABLE Lixeira (
+    numero INTEGER PRIMARY KEY,
+    cor VARCHAR,
+    capacidade FLOAT
+);
 
-CREATE TABLE Descarta_Material_Usuario_Lixeira_Dia ( fk_Material_codigo INTEGER, fk_Usuario_matricula VARCHAR, fk_Lixeira_numero INTEGER, fk_Dia_data DATE );<br>
+CREATE TABLE Localização (
+    campus VARCHAR,
+    coordenada VARCHAR PRIMARY KEY,
+    bloco INTEGER
+);
 
-INSERT INTO USUARIO (NOME, MATRICULA, SERIE, CURSO) VALUES<br>
-('Ariana Grande', '20181tiimi8373', '2', 'Informática'),<br>
-('Im Na Yeon', '20161tiimi8788', '4', 'Informática'),<br>
-('Kim Taehyung', '2019prof8888', NULL, NULL),<br>
-('Park Jimin', '2014bsi6666', '3', 'Sistema de Informações'),<br>
-('Min Yoongi', '2017tiimi1212', '1', 'Informática'),<br>
-('Jung Hoseok', '20191tiimi7787', '3', 'Informática'),<br>
-('Jeon Jungkook', '20161prof5657', NULL, NULL),<br>
-('Kim Seokjin', '20181bsi3526', '2', 'Sistema de Informações'),<br>
-('Kim Namjoon', '20191tiimi3677', '1', 'Informática'),<br>
-('Hirai Momo', '20181bsi4646', '1', 'Sistema de Informações');<br>
+CREATE TABLE Tipo_material (
+    codigo INTEGER PRIMARY KEY,
+    nome_tipo VARCHAR
+);
 
-INSERT INTO MATERIAL (NOME, TIPO, PESO, CODIGO) VALUES<br>
-('Garrafa Pet', 'Plástico', 50, 123),<br>
-('Guardanapo', 'Papel', 5, 222),<br>
-('Lata de Refri', 'Metal', 14.5, 628),<br>
-('Casca de Banana', 'Orgânico', 80, 782),<br>
-('Folha de Prova', 'Papel', 5, 235),<br>
-('Canudo', 'Plástico', 9, 234),<br>
-('Garrafa de Vidro', 'Vidro', 400, 682),<br>
-('Papel de Bala', 'Plástico', 9, 908),<br>
-('Lata de Refri', 'Metal', 50, 627),<br>
-('Casca de Tangerina', 'Orgânico', 80, 187);<br>
+CREATE TABLE Descarte (
+    fk_Material_codigo INTEGER,
+    fk_Lixeira_numero INTEGER,
+    fk_Usuário_matricula INTEGER
+);
 
-INSERT INTO LIXEIRA (COR, NUMERO, MATERIAL, CAPACIDADE, LOCALIZACAO) VALUES<br> 
-('Vermelho', 4, 'Plástico', 50, 'Campus Serra'),<br>
-('Azul', 23, 'Papel', 40, 'Campus Vitória'),<br>
-('Amarelo', 289, 'Metal', 100, 'Campus Cariacica'),<br>
-('Marrom', 33, 'Orgânico', 50, 'Campus Nova Venécia'),<br>
-('Azul', 44, 'Papel', 200, 'Campus Aracruz'),<br>
-('Vermelho', 122, 'Plástico', 150, 'Campus Montanha'),<br>
-('Verde', 28, 'Vidro', 100, 'Campus Santa Teresa'),<br>
-('Vermelho', 3, 'Plástico', 40, 'Campus Vila Velha'),<br>
-('Amarelo', 90, 'Metal', 150, 'Campus Itapina'),<br>
-('Marrom', 30, 'Orgânico', 50, 'Campus Guarapari');<br>
+CREATE TABLE Usuario_curso (
+    fk_Usuário_matricula INTEGER,
+    fk_Curso_codigo INTEGER
+);
 
-INSERT INTO DIA (QTD_LIXO, DATA) VALUES
-(3, '2019/10/20'),<br>
-(7, '2019/06/25'),<br>
-(1, '2019/09/01'),<br>
-(3, '2019/02/03'),<br>
-(10, '2019/07/24'),<br>
-(7, '2019/07/25'),<br>
-(8, '2019/09/10'),<br>
-(10, '2019/06/24'),<br>
-(4, '2019/05/30'),<br>
-(1, '2019/07/03');<br>
+CREATE TABLE Material_tipo (
+    fk_Tipo_material_codigo INTEGER,
+    fk_Material_codigo INTEGER
+);
+
+CREATE TABLE Lixeira_Localização (
+    fk_Lixeira_numero INTEGER,
+    fk_Localização_coordenada VARCHAR
+);
+
+
+CURSO<br>
+insert into curso values (1,'Informatica'), (2,'Mecatronica'), (3,'Automacao Industrial'), (4,'Sistema de Informacoes'), (5,'Anatomia');
+
+DESCARTE<br>
+*falta<br>
+
+LIXEIRA<br>
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+
+cores = ['azul', 'vermelho', 'verde', 'amarelo', 'preto', 'laranja', 'branco', 'roxo', 'marrom']<br>
+
+for i in range(100):<br>
+  id=i+1<br>
+  numero = fake.ean8()<br>
+  cor = random.choice(cores)<br>
+  capacidade = np.random.randint(low=10,high=200)<br>
+  insert_instruction = """insert into lixeira values (%s,%s,%s)"""<br>
+ 
+  insert_values = (numero, cor, capacidade)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+
+LIXEIRA_LOCALIZAO<br>
+*parcialmente completa<br>
+insert into lixeira_localizao (fk_lixeira_numero) select numero from lixeira; <br>
+
+LOCALIZAO<br>
+
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+for i in range(100):<br>
+  id=i+1<br>
+  campus = fake_factory.city()<br>
+  coordenada = fake_factory.coordinate(center=None, radius=0.001)<br>
+  bloco = np.random.randint(low=1,high=10)<br>
+  insert_instruction = """insert into localizao values (%s,%s,%s)"""<br>
+ 
+  insert_values = (campus, coordenada, bloco)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+
+MATERIAL<br>
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+
+for i in range(100):<br>
+  id = i + 1<br>
+  codigo = fake.ean8()<br>
+  peso = np.random.randint(low=1,high=100)<br>
+  insert_instruction = """insert into material values (%s,%s)"""<br>
+ 
+  insert_values = (codigo, peso)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+
+MATERIAL_TIPO<br>
+*falta
+
+TIPO_MATERIAL<br>
+insert into tipo_material values (1,'papel'), (2,'plastico'), (3,'vidro'), (4,'metal'), (5,'madeira'), (6,'eletronicos'), (7,'hospitalar'), (8,'radioativos'), (9,'organico');
+
+USURIO_CURSO<br>
+import pandas as pd<br>
+resultado = pd.read_sql_query("select matricula from usurio",conn)<br>
+
+res_curso=pd.read_sql_query("select * from curso",conn)<br>
+len(res_curso)<br>
+
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+count=1<br>
+for i in resultado.values:<br>
+  print(count)<br>
+  count=count+1<br>
+  matricula = i[0]<br>
+  #print(type(matricula))<br>
+  #print(matricula)<br>
+  codigo = np.random.randint(low=1,high=6)<br>
+  #print(type(codigo))<br>
+  insert_instruction = """insert into usuario_curso values (%s,%s)"""<br>
+  insert_values = (int(matricula),codigo)<br>
+  print(insert_instruction,insert_values)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+cur.execute("commit")<br>
+
+USURIO<br>
+fake_factory = Factory.create('pt_BR')<br>
+from faker.providers import barcode<br>
+
+from faker import Faker<br>
+from faker.providers import barcode<br>
+
+fake = Faker()<br>
+fake.add_provider(barcode)<br>
+
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction"<br>
+for i in range(100):<br>
+  id=i+1<br>
+  nome = fake_factory.name()<br>
+  matricula = fake.ean8()<br>
+  serie = np.random.randint(low=1,high=4)<br>
+  insert_instruction = """insert into usurio values (%s,%s,%s)"""<br>
+ 
+  insert_values = (nome, int(matricula), serie)<br>
+  cur.execute(insert_instruction, insert_values)<br>
 
        postgres://wzvtfjcc:dmyeQX...@raja.db.elephantsql.com:5432/wzvtfjcc
        
 #### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
        
-DROP TABLE Usuario;<br>
-DROP TABLE Material;<br>
-DROP TABLE Lixeira;<br>
-DROP TABLE Dia;<br>
-DROP TABLE Descarta_Material_Usuario_Lixeira_Dia;<br>
+DROP TABLE curso;<br>
+DROP TABLE descarte;<br>
+DROP TABLE lixeira;<br>
+DROP TABLE lixeira_localizao;<br>
+DROP TABLE localizao;<br>
+DROP TABLE material;<br>
+DROP TABLE material_tipo;<br>
+DROP TABLE tipo_material;<br>
+DROP TABLE usuario_curso;<br>
+DROP TABLE usurio;<br>
 
-CREATE TABLE Usuario ( nome VARCHAR(23), matricula VARCHAR(14) PRIMARY KEY, serie VARCHAR(5), curso VARCHAR(50));<br>
+CREATE TABLE Usuário (
+    nome VARCHAR,
+    matricula INTEGER PRIMARY KEY,
+    serie VARCHAR
+);
 
-CREATE TABLE Material ( nome VARCHAR(23), tipo VARCHAR(10), peso FLOAT, codigo INTEGER PRIMARY KEY );<br>
+CREATE TABLE Curso (
+    codigo INTEGER PRIMARY KEY,
+    nome_curso VARCHAR
+);
 
-CREATE TABLE Lixeira ( cor VARCHAR(15), numero INTEGER PRIMARY KEY, material VARCHAR(23), capacidade FLOAT, localizacao VARCHAR(20) );<br>
+CREATE TABLE Material (
+    codigo INTEGER PRIMARY KEY,
+    peso FLOAT
+);
 
-CREATE TABLE Dia ( qtd_lixo FLOAT, data DATE PRIMARY KEY );<br>
+CREATE TABLE Lixeira (
+    numero INTEGER PRIMARY KEY,
+    cor VARCHAR,
+    capacidade FLOAT
+);
 
-CREATE TABLE Descarta_Material_Usuario_Lixeira_Dia ( fk_Material_codigo INTEGER, fk_Usuario_matricula VARCHAR, fk_Lixeira_numero INTEGER, fk_Dia_data DATE );<br>
+CREATE TABLE Localização (
+    campus VARCHAR,
+    coordenada VARCHAR PRIMARY KEY,
+    bloco INTEGER
+);
 
-INSERT INTO USUARIO (NOME, MATRICULA, SERIE, CURSO) VALUES<br>
-('Ariana Grande', '20181tiimi8373', '2', 'Informática'),<br>
-('Im Na Yeon', '20161tiimi8788', '4', 'Informática'),<br>
-('Kim Taehyung', '2019prof8888', NULL, NULL),<br>
-('Park Jimin', '2014bsi6666', '3', 'Sistema de Informações'),<br>
-('Min Yoongi', '2017tiimi1212', '1', 'Informática'),<br>
-('Jung Hoseok', '20191tiimi7787', '3', 'Informática'),<br>
-('Jeon Jungkook', '20161prof5657', NULL, NULL),<br>
-('Kim Seokjin', '20181bsi3526', '2', 'Sistema de Informações'),<br>
-('Kim Namjoon', '20191tiimi3677', '1', 'Informática'),<br>
-('Hirai Momo', '20181bsi4646', '1', 'Sistema de Informações');<br>
+CREATE TABLE Tipo_material (
+    codigo INTEGER PRIMARY KEY,
+    nome_tipo VARCHAR
+);
 
-INSERT INTO MATERIAL (NOME, TIPO, PESO, CODIGO) VALUES<br>
-('Garrafa Pet', 'Plástico', 50, 123),<br>
-('Guardanapo', 'Papel', 5, 222),<br>
-('Lata de Refri', 'Metal', 14.5, 628),<br>
-('Casca de Banana', 'Orgânico', 80, 782),<br>
-('Folha de Prova', 'Papel', 5, 235),<br>
-('Canudo', 'Plástico', 9, 234),<br>
-('Garrafa de Vidro', 'Vidro', 400, 682),<br>
-('Papel de Bala', 'Plástico', 9, 908),<br>
-('Lata de Refri', 'Metal', 50, 627),<br>
-('Casca de Tangerina', 'Orgânico', 80, 187);<br>
+CREATE TABLE Descarte (
+    fk_Material_codigo INTEGER,
+    fk_Lixeira_numero INTEGER,
+    fk_Usuário_matricula INTEGER
+);
 
-INSERT INTO LIXEIRA (COR, NUMERO, MATERIAL, CAPACIDADE, LOCALIZACAO) VALUES<br> 
-('Vermelho', 4, 'Plástico', 50, 'Campus Serra'),<br>
-('Azul', 23, 'Papel', 40, 'Campus Vitória'),<br>
-('Amarelo', 289, 'Metal', 100, 'Campus Cariacica'),<br>
-('Marrom', 33, 'Orgânico', 50, 'Campus Nova Venécia'),<br>
-('Azul', 44, 'Papel', 200, 'Campus Aracruz'),<br>
-('Vermelho', 122, 'Plástico', 150, 'Campus Montanha'),<br>
-('Verde', 28, 'Vidro', 100, 'Campus Santa Teresa'),<br>
-('Vermelho', 3, 'Plástico', 40, 'Campus Vila Velha'),<br>
-('Amarelo', 90, 'Metal', 150, 'Campus Itapina'),<br>
-('Marrom', 30, 'Orgânico', 50, 'Campus Guarapari');<br>
+CREATE TABLE Usuario_curso (
+    fk_Usuário_matricula INTEGER,
+    fk_Curso_codigo INTEGER
+);
 
-INSERT INTO DIA (QTD_LIXO, DATA) VALUES<br>
-(3, '2019/10/20'),<br>
-(7, '2019/06/25'),<br>
-(1, '2019/09/01'),<br>
-(3, '2019/02/03'),<br>
-(10, '2019/07/24'),<br>
-(7, '2019/07/25'),<br>
-(8, '2019/09/10'),<br>
-(10, '2019/06/24'),<br>
-(4, '2019/05/30'),<br>
-(1, '2019/07/03');<br>
+CREATE TABLE Material_tipo (
+    fk_Tipo_material_codigo INTEGER,
+    fk_Material_codigo INTEGER
+);
+
+CREATE TABLE Lixeira_Localização (
+    fk_Lixeira_numero INTEGER,
+    fk_Localização_coordenada VARCHAR
+);
+
+
+CURSO<br>
+insert into curso values (1,'Informatica'), (2,'Mecatronica'), (3,'Automacao Industrial'), (4,'Sistema de Informacoes'), (5,'Anatomia');
+
+DESCARTE<br>
+*falta<br>
+
+LIXEIRA<br>
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+
+cores = ['azul', 'vermelho', 'verde', 'amarelo', 'preto', 'laranja', 'branco', 'roxo', 'marrom']<br>
+
+for i in range(100):<br>
+  id=i+1<br>
+  numero = fake.ean8()<br>
+  cor = random.choice(cores)<br>
+  capacidade = np.random.randint(low=10,high=200)<br>
+  insert_instruction = """insert into lixeira values (%s,%s,%s)"""<br>
+ 
+  insert_values = (numero, cor, capacidade)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+
+LIXEIRA_LOCALIZAO<br>
+*parcialmente completa<br>
+insert into lixeira_localizao (fk_lixeira_numero) select numero from lixeira; <br>
+
+LOCALIZAO<br>
+
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+for i in range(100):<br>
+  id=i+1<br>
+  campus = fake_factory.city()<br>
+  coordenada = fake_factory.coordinate(center=None, radius=0.001)<br>
+  bloco = np.random.randint(low=1,high=10)<br>
+  insert_instruction = """insert into localizao values (%s,%s,%s)"""<br>
+ 
+  insert_values = (campus, coordenada, bloco)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+
+MATERIAL<br>
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+
+for i in range(100):<br>
+  id = i + 1<br>
+  codigo = fake.ean8()<br>
+  peso = np.random.randint(low=1,high=100)<br>
+  insert_instruction = """insert into material values (%s,%s)"""<br>
+ 
+  insert_values = (codigo, peso)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+
+MATERIAL_TIPO<br>
+*falta
+
+TIPO_MATERIAL<br>
+insert into tipo_material values (1,'papel'), (2,'plastico'), (3,'vidro'), (4,'metal'), (5,'madeira'), (6,'eletronicos'), (7,'hospitalar'), (8,'radioativos'), (9,'organico');
+
+USURIO_CURSO<br>
+import pandas as pd<br>
+resultado = pd.read_sql_query("select matricula from usurio",conn)<br>
+
+res_curso=pd.read_sql_query("select * from curso",conn)<br>
+len(res_curso)<br>
+
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
+count=1<br>
+for i in resultado.values:<br>
+  print(count)<br>
+  count=count+1<br>
+  matricula = i[0]<br>
+  #print(type(matricula))<br>
+  #print(matricula)<br>
+  codigo = np.random.randint(low=1,high=6)<br>
+  #print(type(codigo))<br>
+  insert_instruction = """insert into usuario_curso values (%s,%s)"""<br>
+  insert_values = (int(matricula),codigo)<br>
+  print(insert_instruction,insert_values)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+cur.execute("commit")<br>
+
+USURIO<br>
+fake_factory = Factory.create('pt_BR')<br>
+from faker.providers import barcode<br>
+
+from faker import Faker<br>
+from faker.providers import barcode<br>
+
+fake = Faker()<br>
+fake.add_provider(barcode)<br>
+
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction"<br>
+for i in range(100):<br>
+  id=i+1<br>
+  nome = fake_factory.name()<br>
+  matricula = fake.ean8()<br>
+  serie = np.random.randint(low=1,high=4)<br>
+  insert_instruction = """insert into usurio values (%s,%s,%s)"""<br>
+ 
+  insert_values = (nome, int(matricula), serie)<br>
+  cur.execute(insert_instruction, insert_values)<br>
 
 https://api.elephantsql.com/console/b0576abf-5bf5-4d35-a6b0-071283f4356f/browser?
 
