@@ -372,15 +372,31 @@ https://api.elephantsql.com/console/b0576abf-5bf5-4d35-a6b0-071283f4356f/browser
     OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 
-![Alt text](https://github.com/colorscompany/trabalho01/blob/master/1.PNG?raw=true "Tabela1")<br>
+CURSO:<br>
+insert into curso values (1,'Informatica'), (2,'Mecatronica'), (3,'Automacao Industrial'), (4,'Sistema de Informacoes'), (5,'Anatomia');<br>
+![Alt text](https://github.com/colorscompany/trabalho01/blob/master/curso.PNG?raw=true "Tabela1")<br>
 
-![Alt text](https://github.com/colorscompany/trabalho01/blob/master/2.PNG?raw=true "Tabela2")<br>
+DESCARTE:<br>
+*falta
 
-![Alt text](https://github.com/colorscompany/trabalho01/blob/master/3.PNG?raw=true "Tabela3")<br>
+LIXEIRA: <br>
+fake_factory = Factory.create('pt_BR')<br>
+cur.execute("start transaction")<br>
 
-![Alt text](https://github.com/colorscompany/trabalho01/blob/master/4.PNG?raw=true "Tabela4")<br>
+cores = ['azul', 'vermelho', 'verde', 'amarelo', 'preto', 'laranja', 'branco', 'roxo', 'marrom']<br>
 
-![Alt text](https://github.com/colorscompany/trabalho01/blob/master/6.PNG?raw=true "Tabela5")<br>
+for i in range(100):<br>
+  id=i+1<br>
+  numero = fake.ean8()<br>
+  cor = random.choice(cores)<br>
+  capacidade = np.random.randint(low=10,high=200)<br>
+  insert_instruction = """insert into lixeira values (%s,%s,%s)"""<br>
+ 
+  insert_values = (numero, cor, capacidade)<br>
+  cur.execute(insert_instruction, insert_values)<br>
+  ![Alt text](https://github.com/colorscompany/trabalho01/blob/master/lixeira.PNG?raw=true "Tabela1")<br>
+
+  
 
 
 
